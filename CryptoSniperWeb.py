@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 # =========================
 # 基本設定
 # =========================
-BINANCE_API = "https://api.binance.com/api/v3/klines"
+BINANCE_API = "https://api.binance.us/api/v3/klines"
 INTERVAL = "1m"
 LIMIT = 120
 MIN_BARS = 60
@@ -183,4 +183,5 @@ for col, symbol in zip(cols, symbols):
 if auto_refresh:
     time.sleep(refresh_sec)
     st.rerun()
+
 
