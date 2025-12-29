@@ -133,6 +133,7 @@ for col, symbol in zip(cols, symbols):
         st.subheader(symbol)
 
         df = get_klines(symbol)
+        st.write("DEBUG:", symbol, df is None, 0 if df is None else len(df))
         if df is None or len(df) < MIN_BARS:
             st.warning("⏳ 等待 K 線資料")
             continue
@@ -182,3 +183,4 @@ for col, symbol in zip(cols, symbols):
 if auto_refresh:
     time.sleep(refresh_sec)
     st.rerun()
+
